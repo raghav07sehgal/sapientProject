@@ -21,18 +21,6 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
-  getFilteredData(array) {
-    return array.map((val) => ({
-      flight_No: val.flight_number,
-      mission_name: val.mission_name,
-      launch_success: val.launch_success,
-      launch_landing: val.rocket.first_stage.cores[0].land_success,
-      mission_id: val.mission_id,
-      launch_year: val.launch_year,
-      logo: val.links.mission_patch_small
-    }));
-  }
-
   getYear(val) {
     this.paramsObj['launch_year'] = val;
     this.dataService.getRequest(this.paramsObj).subscribe((data: any[]) => {
@@ -54,4 +42,16 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
+  getFilteredData(array) {
+    return array.map((val) => ({
+      flight_No: val.flight_number,
+      mission_name: val.mission_name,
+      launch_success: val.launch_success,
+      launch_landing: val.rocket.first_stage.cores[0].land_success,
+      mission_id: val.mission_id,
+      launch_year: val.launch_year,
+      logo: val.links.mission_patch_small
+    }));
+  }
+  
 }

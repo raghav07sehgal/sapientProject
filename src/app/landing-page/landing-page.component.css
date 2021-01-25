@@ -15,7 +15,6 @@
   border-bottom: 1px solid black;
   width: 100px;
   text-align: center;
-  margin-left: 10%;
   margin: 5% 10%;
 }
 .ftClr1{
@@ -79,7 +78,10 @@ header{
 }
 .row{
   display: inline-flex;
-  width: 100%;
+  width: 99%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 1%;
 }
 
 body {
@@ -97,8 +99,50 @@ footer {
   font-size: 20px;
 }
 
-@media (max-width: 800px) {
-  .container {
+/* Media Query for Mobile */ 
+@media (max-width: 700px) {
+  .col1 {
     flex-direction: column;
+    max-width: 100%;
+    width: 80%;
+    margin-left: 10%;
+  }
+  .col2 {
+    flex-direction: column;
+    max-width: 100%;
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 5%;
+  }
+  .btn{
+    margin: 2% 7%;
+  }
+  .subTitle{
+    margin: 3% 30%;
+  }
+  .content{
+    padding: 7%;
+    margin: 5%;
   }
 }
+/* Media Query for Tablets Ipads portrait mode */ 
+@media (min-width: 701px) and (max-width: 1024px){ 
+   .col1{
+    width: 60%;
+    margin: 0 auto;
+   }
+   .btn{
+    margin: 2% 5%;
+  }
+  .subTitle{
+    margin: 1% 30%;
+  }
+  .col2 {
+    flex-direction: row;
+    margin: 5% 15%;
+    padding: 0 7%;
+  }
+  .content{
+    margin: 1.4%;
+  }
+} 
