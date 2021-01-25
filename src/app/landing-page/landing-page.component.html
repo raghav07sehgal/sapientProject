@@ -1,47 +1,48 @@
 <div class="container">
-    <div class="heading">
-        <h3>SpaceX Launch Programs</h3>
+  <header>
+    <h3>SpaceX Launch Programs</h3>
+  </header>
+  <div class="row">
+    <div class="col1">
+      <p class="subHeading">Filters</p>
+      <div>
+        <p class="subTitle">Launch Years</p>
+        <ng-container *ngFor="let year of yearButtons">
+          <button class="btn" (click)="getYear(year)">{{year}}</button>
+        </ng-container>
+      </div>
+      <div>
+        <p class="subTitle">Successful Launch</p>
+        <ng-container *ngFor="let btn of launchButtons">
+          <button class="btn" (click)="getLaunch(btn)">{{btn}}</button>
+        </ng-container>
+      </div>
+      <div>
+        <p class="subTitle">Successful Landing</p>
+        <ng-container *ngFor="let btn of launchButtons">
+          <button class="btn" (click)="getLand(btn)">{{btn}}</button>
+        </ng-container>
+      </div>
     </div>
-    <div class="content">
-        <div class="col-1">
-            <p>Filters</p>
-            <div>
-                <p>Launch Years</p>
-                <ng-container *ngFor="let year of yearButtons">
-                    <button (click)="getYear(year)">{{year}}</button>
-                </ng-container>
-            </div>
-            <div>
-                <p>Successful Launch</p>
-                <ng-container *ngFor="let btn of launchButtons">
-                    <button (click)="getLaunch(btn)">{{btn}}</button>
-                </ng-container>
-            </div>
-            <div>
-                <p>Successful Landing</p>
-                <ng-container *ngFor="let btn of launchButtons">
-                    <button (click)="getLand(btn)">{{btn}}</button>
-                </ng-container>
-            </div>
+    <div class="col2">
+      <ng-container *ngFor="let data of spacePrograms;let i=index">
+        <div class="content">
+          <img class="img" src='{{data.logo}}' />
+          <p class="contentTitle">{{data.mission_name}} #{{data.flight_No}}</p>
+          <div>
+            <p>Mission Ids:</p>
+            <ul *ngFor="let list of data.mission_id">
+              <li>{{list}}</li>
+            </ul>
+            <P><span class="bold">Launch Year:</span> {{data.launch_year}}</P>
+            <p><span class="bold">Successful Launch:</span> {{data.launch_success}}</p>
+            <p><span class="bold">Successful Landing:</span> {{data.launch_landing}}</p>
+          </div>
         </div>
-        <div class="col-2">
-            <ng-container *ngFor="let data of spacePrograms">
-                <div>
-                    <img src='{{data.logo}}' />
-                    <p>{{data.mission_name}} #{{data.flight_No}}</p>
-                    <div>
-                        <p>Mission Ids:</p>
-                        <ul *ngFor="let list of data.mission_id">
-                            <li>{{list}}</li>
-                        </ul>
-                        <P>Launch Year: <span>{{data.launch_year}}</span></P>
-                        <p>Successful Launch: <span>{{data.launch_success}}</span></p>
-                        <p>Successful Landing: <span>{{data.launch_landing}}</span></p>
-                    </div>
-                </div>
-            </ng-container>
-        </div>
-        <div class="col-3"></div>
-        <div class="col-4"></div>
+      </ng-container>
     </div>
+  </div>
+  <!-- <footer>
+    <span class="bold">Developed By:</span> Raghav Sehgal
+  </footer> -->
 </div>
