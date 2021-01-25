@@ -3,6 +3,7 @@
     <h3>SpaceX Launch Programs</h3>
   </header>
   <div class="row">
+
     <div class="col1">
       <p class="subHeading">Filters</p>
       <div>
@@ -24,25 +25,27 @@
         </ng-container>
       </div>
     </div>
+
     <div class="col2">
       <ng-container *ngFor="let data of spacePrograms;let i=index">
         <div class="content">
           <img class="img" src='{{data.logo}}' />
           <p class="contentTitle">{{data.mission_name}} #{{data.flight_No}}</p>
           <div>
-            <p>Mission Ids:</p>
-            <ul *ngFor="let list of data.mission_id">
+            <p class="bold">Mission Ids:</p>
+            <ul class="ftClr1" *ngFor="let list of data.mission_id">
               <li>{{list}}</li>
             </ul>
-            <P><span class="bold">Launch Year:</span> {{data.launch_year}}</P>
-            <p><span class="bold">Successful Launch:</span> {{data.launch_success}}</p>
-            <p><span class="bold">Successful Landing:</span> {{data.launch_landing}}</p>
+            <P class="ftClr1"><span class="bold">Launch Year:</span> {{data.launch_year}}</P>
+            <p class="ftClr1"><span class="bold">Successful Launch:</span> {{data.launch_success}}</p>
+            <p class="ftClr1"><span class="bold">Successful Landing:</span> {{data.launch_landing}}</p>
           </div>
         </div>
       </ng-container>
     </div>
+
   </div>
-  <!-- <footer>
+  <footer>
     <span class="bold">Developed By:</span> Raghav Sehgal
-  </footer> -->
+  </footer>
 </div>

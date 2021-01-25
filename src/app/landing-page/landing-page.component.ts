@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
 import { yearsBtn, launchBtn } from '../constant/button.constant';
-import { FormGroup } from '@angular/forms'
-import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-landing-page',
