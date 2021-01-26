@@ -26,12 +26,10 @@
   width: 35%;
   margin: 5% 7%;
   border-radius: 10% 10%;
-  
 }
-/* .success:focus {
-  background-color: darkgreen;
+.btn:focus {
   outline: none;
-} */
+}
 .success{
   background-color: darkgreen;
   outline: none;
