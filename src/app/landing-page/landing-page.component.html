@@ -9,19 +9,22 @@
       <div>
         <p class="subTitle">Launch Years</p>
         <ng-container *ngFor="let year of yearButtons">
-          <button class="btn" (click)="getYear(year)">{{year}}</button>
+          <button class="btn" [ngClass]="(selectedYear == year) ? 'success' : 'failure'"
+            (click)="getYear(year)">{{year}}</button>
         </ng-container>
       </div>
       <div>
         <p class="subTitle">Successful Launch</p>
-        <ng-container *ngFor="let btn of launchButtons">
-          <button class="btn" (click)="getLaunch(btn)">{{btn}}</button>
+        <ng-container *ngFor="let launch of launchButtons">
+          <button class="btn" [ngClass]="(selectedLaunch == launch) ? 'success' : 'failure'"
+            (click)="getLaunch(launch)">{{launch}}</button>
         </ng-container>
       </div>
       <div>
         <p class="subTitle">Successful Landing</p>
-        <ng-container *ngFor="let btn of launchButtons">
-          <button class="btn" (click)="getLand(btn)">{{btn}}</button>
+        <ng-container *ngFor="let land of launchButtons">
+          <button class="btn" [ngClass]="(selectedLand == land) ? 'success' : 'failure'"
+            (click)="getLand(land)">{{land}}</button>
         </ng-container>
       </div>
     </div>
@@ -38,7 +41,8 @@
             </ul>
             <P class="ftClr1"><span class="bold">Launch Year:</span> {{data.launch_year}}</P>
             <p class="ftClr1"><span class="bold">Successful Launch:</span> {{data.launch_success}}</p>
-            <p class="ftClr1"><span class="bold">Successful Landing:</span> {{data.launch_landing}}</p>
+            <p class="ftClr1"><span class="bold">Successful Landing:</span>
+              {{(data.launch_land == true || data.launch_land == false)  ? data.launch_land : 'null' }}</p>
           </div>
         </div>
       </ng-container>

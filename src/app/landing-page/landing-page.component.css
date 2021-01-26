@@ -21,17 +21,24 @@
   color: blue;
 }
 .btn{
-  background-color: lightgreen;
-  border: none;
   opacity: 1;
   text-align: center;
   width: 35%;
   margin: 5% 7%;
   border-radius: 10% 10%;
+  
 }
-.btn:focus {
+/* .success:focus {
   background-color: darkgreen;
   outline: none;
+} */
+.success{
+  background-color: darkgreen;
+  outline: none;
+}
+.failure{
+  background-color: lightgreen;
+  border: none;
 }
 .col1{
   background-color: #fff;
